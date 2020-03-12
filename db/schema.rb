@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_03_09_002005) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "room_messages", force: :cascade do |t|
     t.integer "room_id", null: false
     t.integer "user_id", null: false
