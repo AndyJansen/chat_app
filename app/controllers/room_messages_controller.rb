@@ -5,6 +5,7 @@ class RoomMessagesController < ApplicationController
     @room_message = RoomMessage.create user: current_user,
                                        room: @room,
                                        message: params.dig(:room_message, :message)
+                                       format.js { render js: 'window.top.location.reload(true);' }
   end
 
   protected
